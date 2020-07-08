@@ -106,13 +106,6 @@ fun floor(x)
 	else return x\1;
 }
 
-fun abs(x)
-{
-	if(!isNumber(x))print("Argument x must be a number");
-	else{if(x>0 or x==0) return x;
-	else return -x;}
-}
-
 var e=2.7182818284590452354;
 
 var pi=3.14159265358979323846;
