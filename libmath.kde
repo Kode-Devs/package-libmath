@@ -106,42 +106,6 @@ fun floor(x)
 	else return x\1;
 }
 
-
-fun fibonacci(n)
-{
-  if(isNatural(String(n))){
-  fun matrix_mult(A,B)
-  {
-    var C = [[1,1],[1,1]];
-    C[0][0] = ((A[0][0]*B[0][0]) + (A[0][1]*B[1][0]));
-    C[0][1] = ((A[0][0]*B[0][1]) + (A[0][1]*B[1][1]));
-    C[1][0] = ((A[1][0]*B[0][0]) + (A[1][1]*B[1][0]));
-    C[1][1] = ((A[1][0]*B[0][1]) + (A[1][1]*B[1][1]));
-    return C;
-  }
-  fun mat_exp(A,N)
-  {
-    var res = [[1,0],[0,1]] ;
-    while (N > 0)
-    {
-        if (N % 2){res = matrix_mult(res,A);}
-        A = matrix_mult(A,A);
-        N =floor(N/2);
-    }
-    return res;
-  }
-  fun fib(N)
-  {
-    var m_fib = [[1,1],[1,0]];
-    var exp = mat_exp(m_fib,N);
-    return exp;
-  }
-   var arr = fib(n);
-   return arr[0][1];}
-   else print("Argument must be a nonnegative integer");
-}
-
-
 var e=2.7182818284590452354;
 
 var pi=3.14159265358979323846;
