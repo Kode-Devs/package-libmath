@@ -147,7 +147,8 @@ fun fermat(p)
 	if(isNatural(n) and n>0)
 	{
 		var a=2;
-		if(n==1)return False;
+		if(n<=2000000000)return isPrime(n);
+		else if(n%5==0 or n%3==0)return False;
 		else if(modulo(a,n-1,n)!=1)return False;
 		else return True;
 	}
