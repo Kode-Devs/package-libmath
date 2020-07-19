@@ -53,7 +53,7 @@ fun factorial(x)
 		for(var i=x;i>0;i=i-1) fact=fact*i;
 		return fact;
 	}
-	else return Error("Argument must be a nonnegative integer.");
+	else raise Error("Argument must be a nonnegative integer.");
 }
 
 fun abs(x)
