@@ -60,7 +60,7 @@ fun abs(x)
 {
 	if(isNumber(x)) 
 	{
-		if(x>0 or x==0) return x;
+		if(x>=0) return x;
 		else return -x;
 	}
 	else  return Error("Argument must be a number.");
