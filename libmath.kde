@@ -30,13 +30,13 @@ fun gcd(m,n)
 	else if(m==0 and n!=0) return n;
 	else if(n==0 and m!=0) return m;
 	else if(n>m) return gcd(n,m);
-	else if(m==0 and n==0)print("Nan");
+	else if(m==0 and n==0)return NaN;
 	else return gcd(m%n,n);
 }
 
 fun lcm(m,n)
 {
-	if(m==0 or n==0)print("Nan");
+	if(m==0 or n==0)return NaN;
 	else
 	{
 		var x=m*n;
@@ -53,7 +53,7 @@ fun factorial(x)
 		for(var i=x;i>0;i=i-1) fact=fact*i;
 		return fact;
 	}
-	else print("Argument must be a nonnegative integer.");
+	else return Error("Argument must be a nonnegative integer.");
 }
 
 fun abs(x)
@@ -63,20 +63,20 @@ fun abs(x)
 		if(x>0 or x==0) return x;
 		else return -x;
 	}
-	else print("Argument must be a number.");
+	else  return Error("Argument must be a number.");
 }
 
 fun comb(n, k){
-	if(!isNatural(n)) print("Argument n must be a nonnegative integer");
-	if(!isNatural(k)) print("Argument k must be a nonnegative integer");
+	if(!isNatural(n))  return Error("Argument n must be a nonnegative integer");
+	if(!isNatural(k))  return Error("Argument k must be a nonnegative integer");
 	if(k<=n) return factorial(n) / (factorial(k) * factorial(n-k));
 	else return 0;
 }
 
 fun perm(n, k)
 {
-	if(!isNatural(n)) print("Argument n must be a nonnegative integer");
-	if(!isNatural(k)) print("Argument k must be a nonnegative integer");
+	if(!isNatural(n))  return Error("Argument n must be a nonnegative integer");
+	if(!isNatural(k))  return Error("Argument k must be a nonnegative integer");
 	if(k<=n)return comb(n,k)*factorial(k);
 	else return 0;
 }
@@ -95,19 +95,19 @@ fun isPrime(m)
 		if(t==1)return False;
 		else return True;
 	}
-	else print("Argument must be a nonnegative integer");
+	else  return Error("Argument must be a nonnegative integer");
 }
 
 fun ceil(x)
 {
-	if(!isNumber(x)) print("Argument x must be a number");
+	if(!isNumber(x))  return Error("Argument x must be a number");
 	else{if(x%1!=0) return (x+1)\1;
 	else return x;}
 }
 
 fun floor(x)
 {
-	if(!isNumber(x))print("Argument x must be a number");
+	if(!isNumber(x)) return Error("Argument x must be a number");
 	else return x\1;
 }
 
@@ -124,7 +124,7 @@ fun fib(n)
 		}
 		return a;
 	}
-	else print("Argument must be a positive integer");
+	else  return Error("Argument must be a positive integer");
 }
 
 fun modulo(a,b,c)
@@ -152,7 +152,7 @@ fun fermat(p)
 		else if(modulo(a,n-1,n)!=1)return False;
 		else return True;
 	}
-	else print("Argument must be a positive integer");
+	else  return Error("Argument must be a positive integer");
 }
 
 var e=2.7182818284590452354;
