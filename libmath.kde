@@ -102,13 +102,13 @@ fun ceil(x)
 {
 	if(!isNumber(x))  return Error("Argument x must be a number");
 	else{if(x%1!=0) return (x+1)\1;
-	else return x;}
+	else return x.asInt();}
 }
 
 fun floor(x)
 {
 	if(!isNumber(x)) return Error("Argument x must be a number");
-	else return x\1;
+	else return (x\1).asInt();
 }
 
 fun fib(n)
@@ -147,7 +147,7 @@ fun fermat(p)
 	if(isNatural(n) and n>0)
 	{
 		var a=2;
-		if(n<=2000000000)return isPrime(n);
+		if(n<=200000000)return isPrime(n);
 		else if(n%5==0 or n%3==0)return False;
 		else if(modulo(a,n-1,n)!=1)return False;
 		else return True;
