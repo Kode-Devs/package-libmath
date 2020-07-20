@@ -1,8 +1,6 @@
-`
-Package libmath
+`Package libmath
 -------------------------------
-This is a library for different mathematical and statistical tools for Kode.
-`
+This is a library for different mathematical and statistical tools for Kode.`;
 
 fun isNumber(m)
 {
@@ -63,8 +61,7 @@ fun factorial(x)
 }
 
 fun abs(x) {
-`
-Function abs(x)
+`Function abs(x)
 -----------------------------------
 This is a Sample Documentation for the funtion abs().
 
@@ -74,8 +71,7 @@ x : the number whose absolute value is to be calculated
 
 returns
 -------
-The absolute value of x i.e., |x|.
-`
+The absolute value of x i.e., |x|.`;
 	if(isNumber(x)) 
 	{
 		if(x>=0) return x;
