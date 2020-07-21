@@ -97,6 +97,15 @@ fun perm(n, k)
 
 fun isPrime(m)
 {
+`Function isPrime(n)
+-----------------------------------
+parameter
+---------
+n : the number to check prime or not.
+
+returns
+-------
+The boolean value True or False.`;
 	if(isNatural(m))
 	{
 		var t=0;
