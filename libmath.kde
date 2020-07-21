@@ -226,13 +226,15 @@ l : a list of numbers.
 returns
 -------
 The sum of all the numbers of the list.`;
+	try{List(l);
 	var s=0;
 	for(var i=0;i<len(l);i=i+1)
 	{
 		if(isNumber(l[i]))s=s+l[i];
 		else{s=Error("Type Error");break;}
 	}
-	return s;
+	return s;}
+	except{return Error("Invalid Input");}
 }
 
 var e=2.7182818284590452354;
