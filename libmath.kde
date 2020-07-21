@@ -60,6 +60,15 @@ The least common multiple of m and n.`;
 
 fun factorial(x)
 {
+`Function factorial(x)
+-----------------------------------
+parameter
+---------
+x : a Nonnegative integer.
+
+returns
+-------
+The factorial of x.`;
 	if(isNatural(x)) 
 	{
 		if(x==0 or x==1)return 1;
@@ -140,6 +149,15 @@ fun ceil(x)
 
 fun floor(x)
 {
+`Function floor(x)
+-----------------------------------
+parameter
+---------
+x : a integer.
+
+returns
+-------
+The floor value of x.`;
 	if(!isNumber(x)) return Error("Argument x must be a number");
 	else return (x\1).asInt();
 }
