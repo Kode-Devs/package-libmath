@@ -215,7 +215,25 @@ fun fermat(p)
 	else  return Error("Argument must be a positive integer");
 }
 
-fun sum(l){var s=0;for(var i=0;i<len(l);i=i+1){if(libmath.isNumber(l[i]))s=s+l[i];else{s=Error("Type Error");break;}}return s;}
+fun sum(l)
+{
+`Function sum(l)
+-----------------------------------
+parameter
+---------
+l : a list of numbers.
+
+returns
+-------
+The sum of all the numbers of the list.`;
+	var s=0;
+	for(var i=0;i<len(l);i=i+1)
+	{
+		if(isNumber(l[i]))s=s+l[i];
+		else{s=Error("Type Error");break;}
+	}
+	return s;
+}
 
 var e=2.7182818284590452354;
 
