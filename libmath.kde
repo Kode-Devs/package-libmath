@@ -2,15 +2,7 @@
 -------------------------------
 This is a library for different mathematical and statistical tools for Kode.`;
 
-fun isNumber(m)
-{
-	try{
-		Number(m);
-		return True;
-	} except {
-		return False;
-	}
-}
+fun isNumber(m){try{m.asReal();return True;}except{return False;}}
 
 fun isNatural(m)
 {
