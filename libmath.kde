@@ -29,6 +29,15 @@ fun isNatural(m)
 
 fun gcd(m,n)
 { 
+`Function gcd(m,n)
+-----------------------------------
+parameter
+---------
+m,n : two integers.
+
+returns
+-------
+The greatest common divisor of m and n.`;
 
 	if(m==n and m!=0) return m;
 	else if(m==0 and n!=0) return n;
@@ -40,6 +49,15 @@ fun gcd(m,n)
 
 fun lcm(m,n)
 {
+`Function lcm(m,n)
+-----------------------------------
+parameter
+---------
+m,n : two integers.
+
+returns
+-------
+The least common multiple of m and n.`;
 	if(m==0 or n==0)return NaN;
 	else
 	{
@@ -136,6 +154,15 @@ fun floor(x)
 
 fun fib(n)
 {
+`Function fib(n)
+-----------------------------------
+parameter
+---------
+n : index of the Fibonacci number.
+
+returns
+-------
+The nth Fibonacci number.`;
 	var a=1,b=1,c;
 	if(isNatural(n) and Number(n)>0)
 	{
