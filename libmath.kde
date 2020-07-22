@@ -189,7 +189,7 @@ The nth Fibonacci number.`;
 		}
 		return a;
 	}
-	else  return Error("Argument must be a positive integer");
+	else raise Error("Argument must be a positive integer").skip(1);
 }
 
 fun modulo(a,b,c)
@@ -220,7 +220,7 @@ fun fermat(p)
 	else  return Error("Argument must be a positive integer");
 }
 
-fun sum(l)
+fun sum(varargin)
 {
 `Function sum(l)
 -----------------------------------
@@ -231,11 +231,11 @@ l : a list of numbers.
 returns
 -------
 The sum of all the numbers of the list.`;
-	try{List(l);
+	try{
 	var s=0;
-	for(var i=0;i<len(l);i=i+1)
+	for(var i=0;i<len(varargin);i=i+1)
 	{
-		if(isNumber(l[i]))s=s+l[i];
+		if(isNumber(varargin[i]))s=s+varargin[i];
 		else{s=Error("Type Error");break;}
 	}
 	return s;}
