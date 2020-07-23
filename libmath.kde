@@ -81,7 +81,7 @@ The factorial of x.`;
 		for(var i=x;i>0;i=i-1) fact=fact*i;
 		return fact;
 	}
-	else return Error("Argument must be a nonnegative integer.");
+	else raise Error("Argument must be a nonnegative integer.").skip(1);
 }
 
 fun abs(x) {
@@ -101,7 +101,7 @@ The absolute value of x i.e., |x|.`;
 		if(x>=0) return x;
 		else return -x;
 	}
-	else  return Error("Argument must be a number.");
+	else  raise Error("Argument must be a number.").skip(1);
 }
 
 fun comb(n, k){
@@ -142,7 +142,7 @@ The boolean value True or False.`;
 		if(t==1)return False;
 		else return True;
 	}
-	else  return Error("Argument must be a nonnegative integer");
+	else  raise Error("Argument must be a nonnegative integer").skip(1);
 }
 
 fun ceil(x)
