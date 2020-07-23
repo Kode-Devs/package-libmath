@@ -217,7 +217,7 @@ fun fermat(p)
 		else if(modulo(a,n-1,n)!=1)return False;
 		else return True;
 	}
-	else  return Error("Argument must be a positive integer");
+	else  raise Error("Argument must be a positive integer").skip(1);
 }
 
 fun sum(varargin)
