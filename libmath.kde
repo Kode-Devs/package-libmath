@@ -129,7 +129,8 @@ n : the number to check prime or not.
 
 returns
 -------
-The boolean value True or False.`;
+The boolean value True or False.
+                                `;
 	if(isNatural(m))
 	{
 		var t=0;
@@ -162,7 +163,8 @@ x : a integer.
 
 returns
 -------
-The floor value of x.`;
+The floor value of x.
+                     `;
 	if(!isNumber(x)) return Error("Argument x must be a number");
 	else return (x\1).asInt();
 }
@@ -177,7 +179,8 @@ n : index of the Fibonacci number.
 
 returns
 -------
-The nth Fibonacci number.`;
+The nth Fibonacci number.
+                          `;
 	var a=1,b=1,c;
 	if(isNatural(n) and Number(n)>0)
 	{
@@ -222,25 +225,45 @@ fun fermat(p)
 
 fun sum(varargin)
 {
-`Function sum(l)
+`Function sum(varargin)
 -----------------------------------
 parameter
 ---------
-l : a list of numbers.
+Comma seperated Numbers like sum(1,2,3) or only a List of Numbers like sum([1,2,3]).
 
 returns
 -------
-The sum of all the numbers of the list.`;
-	try{
-	var s=0;
-	for(var i=0;i<len(varargin);i=i+1)
+The sum of the numbers or the sum of the numbers of the List.
+                                                             `;
+	if(len(varargin)==1)
 	{
-		if(isNumber(varargin[i]))s=s+varargin[i];
-		else{s=Error("Type Error");break;}
+		if(isinstance(varargin[0],List))
+		{
+			var s=0;
+			for(var i=0;i<len(varargin[0]);i=i+1)
+			{
+				if(isNumber(varargin[0][i]))s=s+varargin[0][i];
+				else{s="Error";break;}
+			}
+			if(s=="Error")raise Error("Invalid Input").skip(1);
+			else return s;
+		}
+		else if(isinstance(varargin[0],Number)) return varargin[0];
+		else raise Error("Invalid Input").skip(1);
 	}
-	return s;}
-	except{return Error("Invalid Input");}
+	else
+	{
+		var s=0;
+		for(var i=0;i<len(varargin);i=i+1)
+		{
+			if(isNumber(varargin[i]))s=s+varargin[i];
+			else{s="Error";break;}
+		}
+		if(s=="Error")raise Error("Invalid Input").skip(1);
+		else return s;
+	}
 }
+
 
 var e=2.7182818284590452354;
 
