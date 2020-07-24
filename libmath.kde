@@ -34,7 +34,7 @@ m,n : two integers.
 
 returns
 -------
-The greatest common divisor of m and n.`;
+The greatest common divisor of m and n.\n`;
 
 	if(m==n and m!=0) return m;
 	else if(m==0 and n!=0) return n;
@@ -54,7 +54,7 @@ m,n : two integers.
 
 returns
 -------
-The least common multiple of m and n.`;
+The least common multiple of m and n.\n`;
 	if(m==0 or n==0)return NaN;
 	else
 	{
@@ -73,7 +73,7 @@ x : a Nonnegative integer.
 
 returns
 -------
-The factorial of x.`;
+The factorial of x.\n`;
 	if(isNatural(x)) 
 	{
 		if(x==0)return 1;
@@ -98,7 +98,7 @@ x : the number whose absolute value is to be calculated
 
 returns
 -------
-The absolute value of x i.e., |x|.`;
+The absolute value of x i.e., |x|.\n`;
 	if(isNumber(x)) 
 	{
 		if(x>=0) return x;
@@ -133,7 +133,7 @@ n : the number to check prime or not.
 returns
 -------
 The boolean value True or False.
-                                `;
+                                \n`;
 	if(isNatural(m))
 	{
 		var t=0;
@@ -167,7 +167,7 @@ x : a integer.
 returns
 -------
 The floor value of x.
-                     `;
+                     \n`;
 	if(!isNumber(x)) return Error("Argument x must be a number");
 	else return (x\1).asInt();
 }
@@ -183,7 +183,7 @@ n : index of the Fibonacci number.
 returns
 -------
 The nth Fibonacci number.
-                          `;
+                         \n `;
 	var a=1,b=1,c;
 	if(isNatural(n) and Number(n)>0)
 	{
