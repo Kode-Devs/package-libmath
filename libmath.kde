@@ -77,12 +77,21 @@ The factorial of x.\n`;
 	if(isNatural(x)) 
 	{
 		if(x==0)return 1;
+		else if(x>5000 and x<=10000)
+		{
+			var k=factorial(5000);
+			var l=[k];
+			for(var i=x;i>5000;i=i-1)l.append(i);
+			free();
+			return prod(l);
+		}
 		else
 		{
-			var fact = 1;
-			for(var i=x;i>0;i=i-1)fact=fact*i;
-			return fact;
+			var fac = 1;
+			for(var i=x;i>0;i=i-1)fac=fac*i;
+			return fac;
 		}
+			
 	}
 	else raise Error("Argument must be a nonnegative integer.").skip(1);
 }
@@ -309,18 +318,17 @@ The product of the numbers or the product of the numbers of the List.
 }
 
 
-
 fun fact(n)
 {
 	if(isNatural(n))
 	{
-		if(n<=20000)return factorial(n);
+		if(n<=10000)return factorial(n);
 		else
 		{
-			var k=factorial(20000);
+			var k=factorial(10000);
 			free();
 			var l=[k];
-			for(var i=n;i>20000;i=i-1)l.append(i);
+			for(var i=n;i>10000;i=i-1)l.append(i);
 			free();
 			return prod(l);
 		}
