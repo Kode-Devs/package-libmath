@@ -264,6 +264,47 @@ The sum of the numbers or the sum of the numbers of the List.
 	}
 }
 
+fun prod(varargin)
+{
+`Function prod(varargin)
+-----------------------------------
+parameter
+---------
+Comma seperated Numbers like prod(1,2,3) or only a List of Numbers like prod([1,2,3]).
+
+returns
+-------
+The product of the numbers or the product of the numbers of the List.
+                                                            \n `;
+	if(len(varargin)==1)
+	{
+		if(isinstance(varargin[0],List))
+		{
+			var s=1;
+			for(var i=0;i<len(varargin[0]);i=i+1)
+			{
+				if(isNumber(varargin[0][i]))s=s*varargin[0][i];
+				else{s="Error";break;}
+			}
+			if(s=="Error")raise Error("Invalid Input").skip(1);
+			else return s;
+		}
+		else if(isinstance(varargin[0],Number)) return varargin[0];
+		else raise Error("Invalid Input").skip(1);
+	}
+	else
+	{
+		var s=1;
+		for(var i=0;i<len(varargin);i=i+1)
+		{
+			if(isNumber(varargin[i]))s=s*varargin[i];
+			else{s="Error";break;}
+		}
+		if(s=="Error")raise Error("Invalid Input").skip(1);
+		else return s;
+	}
+}
+
 
 var e=2.7182818284590452354;
 
