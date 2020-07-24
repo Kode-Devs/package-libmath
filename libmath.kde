@@ -105,16 +105,16 @@ The absolute value of x i.e., |x|.`;
 }
 
 fun comb(n, k){
-	if(!isNatural(n))  return Error("Argument n must be a nonnegative integer");
-	if(!isNatural(k))  return Error("Argument k must be a nonnegative integer");
+	if(!isNatural(n))  raise Error("Argument n must be a nonnegative integer").skip(1);
+	if(!isNatural(k))  raise Error("Argument k must be a nonnegative integer").skip(1);
 	if(k<=n) return factorial(n) / (factorial(k) * factorial(n-k));
 	else return 0;
 }
 
 fun perm(n, k)
 {
-	if(!isNatural(n))  return Error("Argument n must be a nonnegative integer");
-	if(!isNatural(k))  return Error("Argument k must be a nonnegative integer");
+	if(!isNatural(n))  raise Error("Argument n must be a nonnegative integer").skip(1);
+	if(!isNatural(k))  raise Error("Argument n must be a nonnegative integer").skip(1);
 	if(k<=n)return comb(n,k)*factorial(k);
 	else return 0;
 }
