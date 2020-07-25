@@ -318,7 +318,6 @@ fun calfac(n)
         if(n%2==1)
         {
             upto_number = upto_number-1;
-            print (upto_number);
             handle_odd = True;
         }
         var next_sum = upto_number;
@@ -330,7 +329,7 @@ fun calfac(n)
             next_sum=next_sum-2;
             next_multi= next_multi+next_sum;
         }
-        if (handle_odd)factoria= factoria*number;
+        if (handle_odd)factoria= factoria*n;
         return factoria;}
         else raise Error("Argument must be a nonnegative integer").skip(1);
 }
