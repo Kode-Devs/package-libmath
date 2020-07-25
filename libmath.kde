@@ -309,6 +309,31 @@ The product of the numbers or the product of the numbers of the List.
 	}
 }
 
+fun calfac(n)
+{
+        if(isNatural(n)){
+        if(n== 1 or n== 0)return 1;
+        var handle_odd = False;
+        var upto_number = n;
+        if(n%2==1)
+        {
+            upto_number = upto_number-1;
+            print (upto_number);
+            handle_odd = True;
+        }
+        var next_sum = upto_number;
+        var next_multi = upto_number;
+        var factoria = 1;
+        while(next_sum >= 2)
+        {
+            factoria =factoria*next_multi;
+            next_sum=next_sum-2;
+            next_multi= next_multi+next_sum;
+        }
+        if (handle_odd)factoria= factoria*number;
+        return factoria;}
+        else raise Error("Argument must be a nonnegative integer");
+}
 
 var e=2.7182818284590452354;
 
