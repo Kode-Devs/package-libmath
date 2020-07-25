@@ -310,25 +310,6 @@ The product of the numbers or the product of the numbers of the List.
 }
 
 
-fun fact(n)
-{
-	if(isNatural(n))
-	{
-		if(n<=20000)return factorial(n);
-		else
-		{
-			var k=factorial(20000);
-			free();
-			var l=[k];
-			for(var i=n;i>20000;i=i-1)l.append(i);
-			free();
-			return prod(l);
-		}
-	}
-	else raise Error("Argument must be a nonnegative integer.").skip(1);
-}
-
-
 var e=2.7182818284590452354;
 
 var pi=3.14159265358979323846;
