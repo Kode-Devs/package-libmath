@@ -1,11 +1,29 @@
  fun pause()
  {
+ `Function pause()
+-----------------------------------
+parameter
+---------
+None.
+
+returns- None
+-------
+Pauses the program untill enter is pressed.\n`;
   var b=inputPwd("Press enter to continue...");
   free();
  }
  
  fun rand()
  { 
+ `Function rand()
+-----------------------------------
+ parameter
+ --------- 
+ None.
+
+returns-- None
+-------
+Generates pseudo random number in the range 0-9.\n`;
   var j;
   for(var i=200;i>0;i=i-1)j=i;
   return now()%10;
