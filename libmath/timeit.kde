@@ -1,3 +1,12 @@
- fun pause(){var b=inputPwd("Press enter to continue...");free();}
+ fun pause()
+ {
+  var b=inputPwd("Press enter to continue...");
+  free();
+ }
  
- fun rand(){var j;for(var i=200;i>0;i=i-1)j=i;return now()%10;}
+ fun rand()
+ { 
+  var j;
+  for(var i=200;i>0;i=i-1)j=i;
+  return now()%10;
+  }
