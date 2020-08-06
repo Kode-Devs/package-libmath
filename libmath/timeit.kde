@@ -28,3 +28,88 @@ Generates pseudo random number in the range 0-9.\n`;
   for(var i=200;i>0;i=i-1)j=i;
   return now()%10;
   }
+
+
+fun max(varargin)
+{
+`Function max(varargin)
+ -----------------------------------
+ parameter
+ ---------
+ Comma seperated Numbers like max(1,2,3) or only a List of Numbers like max([1,2,3]).
+
+ returns
+ -------
+ The maximum of the numbers or the maximum of the numbers of the List.\n`;
+	if(len(varargin)==1)
+	{
+		var t=0;
+		if(isinstance(varargin[0],List))
+		{
+			if(isinstance(varargin[0][0],String))t=2;
+			else t=3;
+			if(t==2)
+			{
+				for(var j=1;j<len(varargin[0]);j=j+1)
+				{
+					if(isinstance(varargin[0][j],String))t=0;
+					else{t=4;break;}
+				}
+			}
+			else if(t==3)
+			{
+				for(var j=1;j<len(varargin[0]);j=j+1)
+				{
+					if(isinstance(varargin[0][j],Number) or isinstance(varargin[0][j],Bool))t=0;
+					else{t=4;break;}
+				}
+			}
+			if(t==0)
+			{
+				var m=varargin[0][0];
+				for(var i=1;i<len(varargin[0]);i=i+1)
+				{
+					if(varargin[0][i]>m)m=varargin[0][i];
+				}
+				return m;
+			}
+			else if (len(varargin[0])==1) return varargin[0][0];
+			else if(t==4)raise Error("Binary Operation '>' can not be performed between operands of type 'Number' and 'String'.").skip(1);
+		}
+		else raise Error("Binary Operation '>' can not be performed between operands of type 'Number' and 'String'.").skip(1);
+	}
+	else
+	{
+		var t=0;
+		if(isinstance(varargin[0],String))t=2;
+		else t=3;
+		if(t==2)
+		{
+			for(var j=1;j<len(varargin);j=j+1)
+			{
+				if(isinstance(varargin[j],String))t=0;
+				else{t=4;break;}
+			}
+		}
+		else if(t==3)
+		{
+			for(var j=1;j<len(varargin);j=j+1)
+			{
+				if(isinstance(varargin[j],Number) or isinstance(varargin[j],Bool))t=0;
+				else{t=4;break;}
+			}
+		}
+		if(t==0)
+		{
+			var m=varargin[0];
+			for(var i=1;i<len(varargin);i=i+1)
+			{
+				if(varargin[i]>m)m=varargin[i];
+			}
+			return m;
+		}
+		else if (len(varargin)==1) return varargin[0];
+		else if(t==4)raise Error("Binary Operation '>' can not be performed between operands of type 'Number' and 'String'.").skip(1);
+	}
+}
+
