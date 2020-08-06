@@ -76,6 +76,7 @@ fun max(varargin)
 			else if (len(varargin[0])==1) return varargin[0][0];
 			else if(t==4)raise Error("Binary Operation '>' can not be performed between operands of type 'Number' and 'String'.").skip(1);
 		}
+		else if(isinstance(varargin[0],Bool) or isinstance(varargin[0],Number) or isinstance(varargin[0],String))return varargin[0];
 		else raise Error("Binary Operation '>' can not be performed between operands of type 'Number' and 'String'.").skip(1);
 	}
 	else
