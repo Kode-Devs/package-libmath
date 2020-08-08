@@ -39,7 +39,7 @@ fun random(a,b)
  parameter -- a,b two numbers
  --------- 
 returns--a pseudo random number in the range(a,b).\n`;
-	try{
+	try{a=a.asInt();b=b.asInt();
 	var x=(1-(rand()/10.0));
 	if(a>b)return ((x*(a-b)+b)\1).asInt();
 	else return ((x*(b-a)+a)\1).asInt();}
