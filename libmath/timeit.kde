@@ -1,5 +1,3 @@
-var random_seed=now()%100;
-
 fun pause()
  {
  `Function pause()
@@ -10,7 +8,7 @@ None.
 
 returns- None
 -------
-Pauses the program untill enter is pressed.\n`;
+Pauses the program until enter is pressed.\n`;
   var b=inputPwd("Press enter to continue...");
   free();
  }
@@ -26,9 +24,8 @@ Pauses the program untill enter is pressed.\n`;
 returns-- None
 -------
 Generates a pseudo random number in the range 0-1.\n`;
-  var a=random_seed;
+  var a=now()%100;
   a=((3*a+23)%10)/10.0;
-  random_seed=a;
   return a;
   }
 
