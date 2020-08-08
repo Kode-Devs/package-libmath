@@ -1,4 +1,7 @@
- fun pause()
+import libmath;
+var a=now()%100;
+
+fun pause()
  {
  `Function pause()
 -----------------------------------
@@ -23,9 +26,8 @@ Pauses the program untill enter is pressed.\n`;
 
 returns-- None
 -------
-Generates pseudo random number in the range 0-9.\n`;
-  var a=now()%100;
-  a=(3*a+23)%10;
+Generates a pseudo random number in the range 0-1.\n`;
+  a=((3*a+23)%10)/10.0;
   return a;
   }
 
@@ -38,8 +40,8 @@ fun random(a,b)
 returns--a pseudo random number in the range(a,b).\n`;
 	try{
 	var x=(1-(rand()/10.0));
-	if(a>b)return x*(a-b)+b;
-	else return x*(b-a)+a;}
+	if(a>b)return libmath.floor(x*(a-b)+b);
+	else return libmath.floor(x*(b-a)+a);}
 	except(Error as e)
 	{raise e.skip(1);}
 }
