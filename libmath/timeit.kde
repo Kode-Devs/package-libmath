@@ -1,3 +1,9 @@
+import libmath;
+
+fun demo(x){
+	return libmath.floor(x);
+}
+
 fun pause()
  {
  `Function pause()
