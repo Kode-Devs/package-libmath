@@ -40,7 +40,7 @@ fun random(a,b)
  --------- 
 returns--a pseudo random number in the range(a,b).\n`;
 	try{a=a.asInt();b=b.asInt();
-	var x=(1-(rand()));
+	var x=(1-rand());
 	if(a>b)return ((x*(a-b)+b)\1).asInt();
 	else return ((x*(b-a)+a)\1).asInt();}
 	except(Error as e)
