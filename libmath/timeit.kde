@@ -36,9 +36,12 @@ fun random(a,b)
  parameter -- a,b two numbers
  --------- 
 returns--a pseudo random number in the range(a,b).\n`;
+	try{
 	var x=(1-(rand()/10.0));
 	if(a>b)return x*(a-b)+b;
-	else return x*(b-a)+a;
+	else return x*(b-a)+a;}
+	except(Error as e)
+	{raise e.skip(1);}
 }
 
 fun max(varargin)
