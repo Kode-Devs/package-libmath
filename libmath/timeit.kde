@@ -1,5 +1,4 @@
-import libmath;
-var a=now()%100;
+var random_seed=now()%100;
 
 fun pause()
  {
@@ -27,7 +26,9 @@ Pauses the program untill enter is pressed.\n`;
 returns-- None
 -------
 Generates a pseudo random number in the range 0-1.\n`;
+  var a=random_seed;
   a=((3*a+23)%10)/10.0;
+  random_seed=a;
   return a;
   }
 
