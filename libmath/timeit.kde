@@ -99,3 +99,53 @@ fun max(varargin)
 }
 
 
+fun copy(l)
+{
+	var n = len(l); 
+	var arr=[];
+	for(var d=0;d<n;d=d+1)
+	{
+		arr.append(l[d]);
+	}
+	return arr;
+}
+
+fun heapify(arr, n, i)
+{
+	var largest = i ;
+	var l = 2 * i + 1;	 
+	var r = 2 * i +2;	
+	try{ 
+	if( l<n and arr[i]<arr[l])largest = l;
+	if (r<n and arr[largest]<arr[r])largest = r; 
+	if (largest != i)
+	{
+		var t = arr[largest];
+		arr[largest]=arr[i];
+		arr[i]=t;
+	heapify(arr, n, largest);
+	} }
+	except(Error as e){raise e.skip(2);}
+} 
+fun Sort(arr1)
+{
+`Function Sort(list)
+ -----------------------------------
+ parameter--A list.
+ returns----Another list with all elements sorted.\n`;
+	var n = len(arr1); 
+	var arr=[];
+	for(var d=0;d<n;d=d+1)
+	{
+		arr.append(arr1[d]);
+	}
+	for(var i=n/2-1;i>=0;i=i-1)heapify(arr, n, i); 
+	for(var j=n-1;j>0;j=j-1)
+	{
+		var temp=arr[0];
+		arr[0]=arr[j];
+		arr[j]=temp;
+		heapify(arr,j,0);
+	}
+	return arr;
+}
