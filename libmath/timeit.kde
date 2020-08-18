@@ -98,6 +98,54 @@ fun max(varargin)
 	}
 }
 
+fun min(varargin)
+{
+`Function min(varargin)
+ -----------------------------------
+ parameter
+ ---------
+ Comma seperated Numbers or Strings like min(1,2,3) or only a List of Numbers or Strings like min([1,2,3]).
+
+ returns
+ -------
+ The minimum of the numbers or the minimum of the numbers of the List.\n`;
+	if(len(varargin)==1)
+	{
+		if(isinstance(varargin[0],List))
+		{
+			var m=varargin[0][0];
+			try
+			{
+				for(var i=1;i<len(varargin[0]);i=i+1)
+				{
+					if(varargin[0][i]<m)m=varargin[0][i];
+				}
+				return m;}
+			except(Error as e)
+			{
+				raise e.skip(1);
+			}
+		}
+		else if (len(varargin)==1) return varargin[0];
+	}
+	else
+	{
+		var m=varargin[0];
+		try
+		{
+			for(var i=1;i<len(varargin);i=i+1)
+			{
+				if(varargin[i]<m)m=varargin[i];
+			}
+			return m;
+		}
+		except(Error as e)
+		{
+			raise e.skip(1);
+		}
+	}
+}
+
 
 fun copy(l)
 {
@@ -133,6 +181,7 @@ fun Sort(arr1)
  -----------------------------------
  parameter--A list.
  returns----Another list with all elements sorted.\n`;
+ try{
 	var n = len(arr1); 
 	var arr=[];
 	for(var d=0;d<n;d=d+1)
@@ -147,5 +196,6 @@ fun Sort(arr1)
 		arr[j]=temp;
 		heapify(arr,j,0);
 	}
-	return arr;
+	return arr;}
+	except(Error as e){raise e.skip(1);}
 }
